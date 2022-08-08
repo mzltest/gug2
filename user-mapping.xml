@@ -1,0 +1,15 @@
+<user-mapping>
+
+    <!-- Per-user authentication and config information -->
+    <authorize username="mzltest" password="mzltest">
+        <protocol>rdp</protocol>
+        <param name="hostname">localhost</param>
+        <param name="port">3389</param>
+ <param name="color-depth">16</param>
+        <param name="width">1080</param>
+    <param name="height">720</param>
+ <param name="ignore-cert">true</param>
+        <param name="username">mzltest</param>
+        <param name="password">mzltest</param>
+    </authorize>
+</user-mapping>
