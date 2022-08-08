@@ -30,9 +30,10 @@ wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
 sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
 sudo systemctl restart tomcat9
 #pulseaudio-xrdp
-netstat -lntp
+
+
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
 sudo guacd
-./cloudflared-linux-amd64 tunnel --url http://127.0.0.1:8080
+./cloudflared-linux-amd64 tunnel --url http://localhost:8080
