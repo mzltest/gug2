@@ -22,7 +22,7 @@ echo "mzltest
 mzltest" |sudo adduser "mzltest"
 #mkdir for guacamole
 sudo mkdir /etc/guacamole
-sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug/main/user-mapping.xml
+sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/user-mapping.xml
 
 #install client
 wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
