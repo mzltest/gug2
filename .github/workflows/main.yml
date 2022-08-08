@@ -1,0 +1,14 @@
+name: rdp
+on: 
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: debian-11
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setting the environment up.
+      run: source configure.sh
