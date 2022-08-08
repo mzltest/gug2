@@ -28,10 +28,9 @@ sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/
 wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
 sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
 sudo systemctl restart tomcat9
-sudo guacd
 #pulseaudio-xrdp
+
 #tunnel it
-sudo guacd
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
 sudo guacd
