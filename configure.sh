@@ -23,7 +23,8 @@ mzltest" |sudo adduser "mzltest"
 #mkdir for guacamole
 sudo mkdir /etc/guacamole
 sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/user-mapping.xml
-
+sudo wget -P /etc/systemd/system https://raw.githubusercontent.com/mzltest/gug2/main/guacd.service
+sudo systemctl start guacd
 #install client
 wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
 sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
