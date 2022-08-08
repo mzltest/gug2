@@ -3,7 +3,7 @@ sudo apt update
 sudo apt install wget tomcat9 icewm firefox fonts-noto-cjk git gcc make
 
 # dependency for guacamole
-sudo apt install libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libssl-dev libvorbis-dev libwebp-dev
+sudo apt install libcairo2-dev libjpeg62-dev libpng-dev libtool-bin uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libssl-dev libvorbis-dev libwebp-dev
 
 #build server
 
