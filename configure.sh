@@ -28,7 +28,7 @@ sudo systemctl start guacd
 #install client
 wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
 sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
-sudo systemctl restart tomcat9
+sudo systemctl start tomcat9
 #pulseaudio-xrdp
 
 #tunnel it
