@@ -1,0 +1,13 @@
+[Unit]
+Description=guacd
+
+[Service]
+ExecStart=/usr/local/sbin/guacd
+
+Restart=always
+
+RestartSec=3s
+
+
+[Install]
+WantedBy=multi-user.target
