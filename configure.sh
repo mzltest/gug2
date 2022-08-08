@@ -1,9 +1,9 @@
 # install packages
-apt update
-apt install wget tomcat9 icewm firefox-esr fonts-noto-cjk git gcc make libsndfile1-dev
+sudo apt update
+sudo apt install wget tomcat9 icewm firefox-esr fonts-noto-cjk git gcc make libsndfile1-dev
 
 # dependency for guacamole
-apt install libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libssl-dev libvorbis-dev libwebp-dev
+sudo apt install libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libssl-dev libvorbis-dev libwebp-dev
 
 #build server
 
@@ -13,22 +13,22 @@ cd guacamole-server-1.4.0/
 #sometimes needed --disable-dependency-tracking
 ./configure --with-init-dir=/etc/init.d --disable-dependency-tracking
 make
-make install
-ldconfig
+sudo make install
+sudo ldconfig
 #rdp server installed later
-apt install xrdp
+sudo apt install xrdp
 #adduser /todo:use vars
 echo "mzltest
-mzltest" | adduser "mzltest"
+mzltest" |sudo adduser "mzltest"
 #mkdir for guacamole
-mkdir /etc/guacamole
-wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug/main/user-mapping.xml
+sudo mkdir /etc/guacamole
+sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug/main/user-mapping.xml
 
 #install client
 wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
-cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
-systemctl restart tomcat9
-/etc/init.d/guacd start
+sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
+sudo systemctl restart tomcat9
+sudo /etc/init.d/guacd start
 #pulseaudio-xrdp
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
