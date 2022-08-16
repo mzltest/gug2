@@ -40,4 +40,4 @@ sudo service tomcat9 start
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
-./cloudflared-linux-amd64 tunnel --url http://127.0.0.1:8080
+./cloudflared-linux-amd64 tunnel --url rdp://localhost:3389
