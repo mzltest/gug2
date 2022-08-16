@@ -24,6 +24,7 @@ sudo apt install xrdp -y
 #adduser /todo:use vars
 sudo adduser mzltest --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
 echo "mzltest:mzltest" | sudo chpasswd
+sudo usermod -aG sudo mzltest
 #mkdir for guacamole
 sudo mkdir /etc/guacamole
 sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/user-mapping.xml
@@ -36,6 +37,8 @@ sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo service xrdp start
 sudo service guacd start
 sudo service tomcat9 start
+
+sudo ss -ltn
 
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
