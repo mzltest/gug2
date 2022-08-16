@@ -33,10 +33,11 @@ sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 
 
 #pulseaudio-xrdp
-
+service xrdp start
+service guacd start
+service tomcat9 restart
 
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
-guacd
 ./cloudflared-linux-amd64 tunnel --url http://127.0.0.1:8080
