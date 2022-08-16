@@ -1,9 +1,13 @@
+#!/bin/bash
+# 此处为您的脚本
 # install packages
 sudo apt update
-sudo apt install wget tomcat9 icewm firefox fonts-noto-cjk git gcc make
-
+sudo apt install wget tomcat9 icewm firefox fonts-noto-cjk git gcc make -y
+#non-interactive for keyboards
+echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
+sudo apt-get install -y -q
 # dependency for guacamole
-sudo apt install libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libssl-dev libvorbis-dev libwebp-dev
+sudo apt install libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libssl-dev libvorbis-dev libwebp-dev -y
 
 #build server
 
@@ -16,24 +20,23 @@ make
 sudo make install
 sudo ldconfig
 #rdp server installed later
-sudo apt install xrdp
+sudo apt install xrdp -y
 #adduser /todo:use vars
-echo "mzltest
-mzltest" |sudo adduser "mzltest"
+sudo adduser mzltest --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+echo "mzltest:mzltest" | sudo chpasswd
 #mkdir for guacamole
 sudo mkdir /etc/guacamole
 sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/user-mapping.xml
-sudo wget -P /etc/systemd/system https://raw.githubusercontent.com/mzltest/gug2/main/guacd.service
-sudo systemctl start guacd
 #install client
 wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
-sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war 
-sudo systemctl restart tomcat9
+sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
+
+
 #pulseaudio-xrdp
 
 
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
-sudo guacd
-./cloudflared-linux-amd64 tunnel --url http://localhost:8080
+guacd
+./cloudflared-linux-amd64 tunnel --url http://127.0.0.1:8080
