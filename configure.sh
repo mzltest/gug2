@@ -2,7 +2,7 @@
 # 此处为您的脚本
 # install packages
 sudo apt update
-sudo apt install wget tomcat9 icewm firefox fonts-noto-cjk git gcc make default-jdk -y
+sudo apt install curl wget tomcat9 icewm firefox fonts-noto-cjk git gcc make default-jdk -y
 #non-interactive for keyboards
 echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
 sudo apt-get install -y -q
@@ -35,11 +35,13 @@ sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 
 #pulseaudio-xrdp
 sudo service xrdp start
-sudo service guacd start
+#sudo service guacd start
 sudo service tomcat9 start
 
 sudo ss -ltn
-
+curl -s https://packagecloud.io/install/repositories/immortal/immortal/script.deb.sh | sudo bash
+sudo apt install immortal -y
+immortal guacd
 #tunnel it
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
