@@ -65,6 +65,6 @@ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
       sudo apt update && sudo apt install ngrok
 
 
-wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-chmod +x cloudflared-linux-amd64
-./cloudflared-linux-amd64 tunnel --url http://localhost:8080
+#wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+#chmod +x cloudflared-linux-amd64
+#./cloudflared-linux-amd64 tunnel --url http://localhost:8080
