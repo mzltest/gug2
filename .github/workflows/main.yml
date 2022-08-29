@@ -13,6 +13,6 @@ jobs:
     - name: Setting the environment up.
       run: source configure.sh
     - name: auth
-      run: ngrok config add-authtoken $NGROK_TOKEN
+      run: ngrok config add-authtoken ${{ secrets.NGROK_TOKEN }}
     - name: tunnel
       run: ngrok http 8080
