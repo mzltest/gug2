@@ -2,7 +2,8 @@
 # 此处为您的脚本
 # install packages
 sudo apt update
-sudo apt install curl wget tomcat9 gnome-session gdm3 fcitx firefox fonts-noto-cjk git gcc make default-jdk -y
+sudo apt install curl wget tomcat9 firefox fonts-noto-cjk git gcc make default-jdk -y
+sudo apt install fcitx fcitx-googlepinyin ubuntu-desktop -y
 #non-interactive for keyboards
 echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
 sudo apt-get install -y -q
