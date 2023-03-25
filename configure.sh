@@ -11,7 +11,7 @@ sudo apt install libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin uuid-de
 
 #build server
 
-wget https://dlcdn.apache.org/guacamole/1.4.0/source/guacamole-server-1.5.0.tar.gz
+wget https://dlcdn.apache.org/guacamole/1.5.0/source/guacamole-server-1.5.0.tar.gz
 tar -xzf guacamole-server-1.5.0.tar.gz
 cd guacamole-server-1.5.0/
 #sometimes needed --disable-dependency-tracking
