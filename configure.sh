@@ -29,8 +29,8 @@ sudo usermod -aG sudo mzltest
 sudo mkdir /etc/guacamole
 sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/user-mapping.xml
 #install client
-wget https://dlcdn.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
-sudo cp guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
+wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-1.5.0.war
+sudo cp guacamole-1.5.0.war /var/lib/tomcat9/webapps/guacamole.war
 
 
 #pulseaudio-xrdp
