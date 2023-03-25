@@ -3,7 +3,7 @@
 # install packages
 sudo apt update
 sudo apt install curl wget tomcat9 firefox fonts-noto-cjk git gcc make default-jdk -y
-sudo apt install fcitx fcitx-googlepinyin ubuntu-desktop -y
+sudo apt install gnome-session gdm3 -y
 #non-interactive for keyboards
 echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
 sudo apt-get install -y -q
