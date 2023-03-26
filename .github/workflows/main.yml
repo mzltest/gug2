@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-#      - name: Setup environment
-#        run: source configure.sh
-      - name: Install composer packages
-        run: ssh -o StrictHostKeyChecking=no -R 80:localhost:8080 nokey@localhost.run
+      - name: Setup environment
+        run: source configure.sh
+      - name: tunnel
+        run: source tunnel.sh
