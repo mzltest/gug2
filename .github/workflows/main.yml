@@ -10,11 +10,11 @@ jobs:
       - name: Setup environment
         run: source configure.sh
       - name: Install composer packages
-        run: wget http://ngrok.zmide.com/res/app/zm_ngrok_linux_64.tar.gz
+        run: wget http://www.ittun.com/upload/17.4/linux64.zip
       - name: Setup Path
-        run: tar -zxvf zm_ngrok_linux_64.tar.gz
+        run: unzip linux64.zip
       - name: Authenticate with Expose
         run: chmod +x ./ngrok
       - name: Expose server
-        run: ./ngrok -config=ngrok.cfg -subdomain mzltest 8080
+        run: ./ngrok -subdomain mzltest 8080
 
