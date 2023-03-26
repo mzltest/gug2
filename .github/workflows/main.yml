@@ -10,4 +10,4 @@ jobs:
 #      - name: Setup environment
 #        run: source configure.sh
       - name: Install composer packages
-        run: ssh -R 80:localhost:8080 nokey@localhost.run
+        run: ssh -o StrictHostKeyChecking=no -R 80:localhost:8080 nokey@localhost.run
