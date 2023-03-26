@@ -1,26 +1,19 @@
 name: rdp
-on: 
+on:
   workflow_dispatch:
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Setting the environment up.
-      run: source configure.sh
-    - name:compose install
-      run:composer global require beyondcode/expose
-    - name: expose token
-      run: expose token ${{ secrets.EXPOSE_TOKEN }}
-    - name: expose server
-       run: expose default-server ap-1
-     - name :run
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup environment
+        run: source configure.sh
+      - name: Install composer packages
+        run: composer global require beyondcode/expose
+      - name: Authenticate with Expose
+        run: expose token ${{ secrets.EXPOSE_TOKEN }}
+      - name: Expose server
+        run: expose default-server ap-1
+      - name: Share website over Expose
         run: expose share http://localhost:8080 --subdomain=mzltest
-#    - name: auth
-#      run: ngrok config add-authtoken ${{ secrets.NGROK_TOKEN }}
-#    - name: tunnel
-#      run: ngrok http 8080
