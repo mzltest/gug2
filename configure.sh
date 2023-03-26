@@ -39,20 +39,7 @@ sudo wget -P /etc/guacamole https://raw.githubusercontent.com/mzltest/gug2/main/
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-1.5.0.war
 sudo cp guacamole-1.5.0.war /var/lib/tomcat9/webapps/guacamole.war
 
-
-#pulseaudio-xrdp
-
-
-
-sudo apt install build-essential dpkg-dev libpulse-dev git autoconf libtool libudev-dev libdbus-1-dev libspeex-dev libsndfile1-dev pulseaudio -y
-cd ~
-git clone https://github.com/neutrinolabs/pulseaudio-module-xrdp.git
-cd pulseaudio-module-xrdp
-bash scripts/install_pulseaudio_sources_apt_wrapper.sh 
-./bootstrap && ./configure PULSE_DIR=~/pulseaudio.src 
-make
-sudo make install
-
+#pulseaudio 不知道为什么有问题
 
 sudo service xrdp start
 #sudo service guacd start
