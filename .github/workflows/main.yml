@@ -11,6 +11,8 @@ jobs:
         run: source configure.sh
       - name: Install composer packages
         run: composer global require beyondcode/expose
+      - name: Setup Path
+        run: export PATH=~/.composer/vendor/bin:$PATH
       - name: Authenticate with Expose
         run: expose token ${{ secrets.EXPOSE_TOKEN }}
       - name: Expose server
