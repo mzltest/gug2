@@ -10,11 +10,4 @@ jobs:
 #      - name: Setup environment
 #        run: source configure.sh
       - name: Install composer packages
-        run: wget http://www.ittun.com/upload/17.4/linux64.zip
-      - name: Setup Path
-        run: unzip linux64.zip
-      - name: Authenticate with Expose
-        run: chmod +x ./linux64/ngrok
-      - name: Expose server
-        run: ./linux64/ngrok -subdomain mzltest 8080
-
+        run: ssh -R 80:localhost:8080 nokey@localhost.run
