@@ -10,12 +10,11 @@ jobs:
       - name: Setup environment
         run: source configure.sh
       - name: Install composer packages
-        run: curl https://github.com/beyondcode/expose/raw/master/builds/expose -L --output expose
+        run: wget http://ngrok.zmide.com/res/app/zm_ngrok_linux_64.tar.gz
       - name: Setup Path
-        run: chmod +x expose
+        run: tar -zxvf zm_ngrok_linux_64.tar.gz
       - name: Authenticate with Expose
-        run: ./expose token ${{ secrets.EXPOSE_TOKEN }}
+        run: chmod +x ./ngrok
       - name: Expose server
-        run: ./expose default-server ap-1
-      - name: Share website over Expose
-        run: ./expose share-port 8080
+        run: ./ngrok -config=ngrok.cfg -subdomain mzltest 8080
+
