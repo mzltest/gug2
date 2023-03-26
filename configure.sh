@@ -2,6 +2,10 @@
 # 此处为您的脚本
 # install packages
 sudo apt update
+sudo apt install -y fcitx5
+sudo apt install -y fcitx5-chinese-addons
+sudo apt install -y fcitx5-frontend-gtk3 fcitx5-frontend-gtk2
+sudo apt install -y fcitx5-frontend-qt5 kde-config-fcitx5
 sudo apt install curl wget tomcat9 firefox fonts-noto-cjk git gcc make default-jdk -y
 sudo apt install gnome-session gdm3 -y
 #non-interactive for keyboards
