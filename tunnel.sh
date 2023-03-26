@@ -1,1 +1,4 @@
-ssh -o KexAlgorithms=+diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa -o Ciphers=+aes256-cbc -o StrictHostKeyChecking=no -R mzltest-2ba7:80:localhost:8080 serveo.net
+wget https://localtonet.com/download/localtonet-linux-x64.zip
+unzip localtonet-linux-x64.zip
+chmod +x ./localtonet
+./localtonet authtoken giP4seTtkXru2mNUAf6vjMJo1Bnl95FCR
