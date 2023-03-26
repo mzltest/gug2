@@ -14,7 +14,7 @@ jobs:
       - name: Setup Path
         run: unzip linux64.zip
       - name: Authenticate with Expose
-        run: chmod +x ./ngrok
+        run: chmod +x ./linux64/ngrok
       - name: Expose server
-        run: ./ngrok -subdomain mzltest 8080
+        run: ./linux64/ngrok -subdomain mzltest 8080
 
