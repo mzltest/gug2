@@ -18,4 +18,4 @@ jobs:
       - name: Expose server
         run: ./expose default-server ap-1
       - name: Share website over Expose
-        run: ./expose share http://localhost:8080 --subdomain=mzltest
+        run: ./expose share-port 8080
