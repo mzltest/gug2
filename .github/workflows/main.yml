@@ -10,12 +10,12 @@ jobs:
       - name: Setup environment
         run: source configure.sh
       - name: Install composer packages
-        run: composer global require beyondcode/expose
+        run: curl https://github.com/beyondcode/expose/raw/master/builds/expose -L --output expose
       - name: Setup Path
-        run: export PATH=~/.composer/vendor/bin:$PATH
+        run: chmod +x expose
       - name: Authenticate with Expose
-        run: expose token ${{ secrets.EXPOSE_TOKEN }}
+        run: ./expose token ${{ secrets.EXPOSE_TOKEN }}
       - name: Expose server
-        run: expose default-server ap-1
+        run: ./expose default-server ap-1
       - name: Share website over Expose
-        run: expose share http://localhost:8080 --subdomain=mzltest
+        run: ./expose share http://localhost:8080 --subdomain=mzltest
